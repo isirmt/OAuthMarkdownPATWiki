@@ -1,5 +1,5 @@
 import { OpenGraphType } from 'next/dist/lib/metadata/types/opengraph-types';
-import { author, siteDescription, siteName } from '@/static/constant';
+import { siteDescription, siteName } from '@/static/constant';
 import type { Metadata } from 'next';
 
 interface Props {
@@ -19,7 +19,6 @@ export function generateMetadataTemplate(props: Props): Metadata {
 
   let metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_URL!),
-    authors: { name: author.name, url: author.url },
     title: outputTitle,
     description: outputDescription,
     keywords,

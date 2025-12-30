@@ -1,19 +1,18 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { WebSite, WithContext } from 'schema-dts';
-import InlineVideo from '@/components/InlineVideo';
 import { InnerLinkBlueButton } from '@/components/InnerLinkButton';
 import JsonLd from '@/components/JsonLd';
 import SearchBoxWrapper from '@/components/SearchBoxWrapper';
 import TipsCard from '@/components/TipsCard';
-import { Main, SectionNoP, Side, Title } from '@/components/layout/PageLayout';
+import { Main, Section, Side, Title } from '@/components/layout/PageLayout';
 import FavoritePosts from '@/components/post/FavoritePosts';
 import { PostLargeCard } from '@/components/post/PostCard';
 import PostPaging from '@/components/post/PostPaging';
 import FavoriteTags from '@/components/tag/FavoriteTags';
 import { generateMetadataTemplate } from '@/lib/SEO';
 import { getPostsProps } from '@/lib/getPosts';
-import { headerMovName, siteName } from '@/static/constant';
+import { siteName } from '@/static/constant';
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateMetadataTemplate({
@@ -43,10 +42,7 @@ export default async function Blogs() {
           </Link>
         </TipsCard>
       </Side>
-      <SectionNoP>
-        <div className='pointer-events-none m-0 aspect-[10_/_3] w-full overflow-hidden bg-[#0e4589] p-0'>
-          <InlineVideo fileName={headerMovName} />
-        </div>
+      <Section>
         <div className='px-8 pb-8 pt-3'>
           <Title>{siteName}</Title>
           <div className='my-3 md:hidden'>
@@ -74,7 +70,7 @@ export default async function Blogs() {
             <InnerLinkBlueButton path='/post' text='投稿一覧へ' />
           </div>
         </div>
-      </SectionNoP>
+      </Section>
     </Main>
   );
 }

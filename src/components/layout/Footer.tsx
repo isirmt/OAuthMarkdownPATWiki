@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getHeaders, getNext } from '@/lib/fetchingFunc';
-import { author } from '@/static/constant';
+import { siteName } from '@/static/constant';
 
 export default async function Footer() {
   const ownerRepoUser = process.env.VERCEL_GIT_REPO_OWNER;
@@ -29,7 +29,7 @@ export default async function Footer() {
             ダッシュボード
           </Link>
         </p>
-        <small>&copy; {author.name}</small>
+        <small>&copy; {siteName}</small>
         <small>
           Build with&nbsp;
           <Link
